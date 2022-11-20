@@ -1,0 +1,29 @@
+<h1>Cadastrar usuario</h1>
+<hr>
+<div class="row align-items-center">
+        <div class="col">
+            <img src="add_user.svg" width="90%" alt="">
+        </div> 
+        <div class="col">
+   <form method="POST" >
+    <div class="mb-3">
+    <label >Nome:<br>
+    <input value=" <?php  echo $_POST['nome'] ?? '' ?>" type="text" name="nome" placeholder="Digite o nome"  >
+    </label>
+    </div>
+    <div class="mb-3">
+    <label >Cidade:<br>
+    <input value=" <?php  echo $_POST['cidade'] ?? '' ?>" type="text" name="cidade" placeholder="Digite a cidade"  >
+    </label>
+    </div>
+    <div class="mb-3">
+    <label >Matricula :<br>
+    <input value=" <?php  echo $_POST['matricula'] ?? '' ?>" type="text" name="matricula" placeholder="Digite a matricula"  >
+    </label>
+    <br>
+    <input type="submit" class="btn btn-primary mt-2" name="enviar">
+   </div>   
+   </form>
+
+</div>
+</div>

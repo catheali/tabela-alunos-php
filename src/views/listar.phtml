@@ -1,0 +1,57 @@
+<h1>Listagem de Alunos </h1>
+<hr>
+<table class=" container table table-striped table-hover">
+
+    <thead class="table-dark">
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Matricula</th>
+        <th>Ações</th>
+    </thead>
+    <tbody >
+        <?php
+        
+        foreach ($dados as $row) {
+                $id = $row['id'];
+
+            echo "<tr>
+                            <td>{$row['id']}</td>
+                            <td>{$row['nome']}</td>
+                            <td>{$row['cidade']}</td>
+                            <td>{$row['matricula']}</td>
+                            <td>
+                                <a href='/editar?id={$id}' class='btn btn-outline-warning btn-sm'>Editar</a>
+                                <button type='button' class='btn btn-outline-danger btn-sm' data-bs-toggle='modal' data-bs-target='#exampleModal'> Excluir</button>
+                            </td>
+                        </tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja mesmo excluir esse contato?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" onclick="confirmar(<?php echo $id; ?>)" class="btn btn-danger">Sim, exclua.</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function confirmar(id){ 
+     location.href = '/excluir?id='+ id;
+       
+}
+
+</script> 

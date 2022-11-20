@@ -1,0 +1,29 @@
+<h1>Editar dados</h1>
+<hr>
+<div class="row align-items-center">
+        <div class="col">
+            <img src="update.svg" width="100%" alt="">
+        </div> 
+        <div class="col">
+   <form method="POST" >
+    <div class="mb-3">
+    <input name="id" type='hidden' value="<?php echo $dados['id']; ?>" >
+    <label >Nome:<br>
+    <input type="text" name="nome" placeholder="Digite o nome" value="<?php echo $dados["nome"] ?? $_POST["nome"] ; ?>" required>
+    </label>
+    </div>
+    <div class="mb-3">
+    <label >Cidade:<br>
+    <input type="text" name="cidade" placeholder="Digite a cidade" value="<?php echo $dados["cidade"] ?? $_POST["cidade"] ; ?> " required>
+    </label>
+    </div>
+    <div class="mb-3">
+    <label >Matricula :<br>
+    <input type="text" name="matricula" placeholder="Digite a matricula" value="<?php echo $dados["matricula"] ?? $_POST["matricula"]; ?>" required>
+    </label>
+    <br>
+    <input type="submit" class="btn btn-primary mt-2" name="enviar">
+   </div>   
+   </form>
+</div>
+</div>
